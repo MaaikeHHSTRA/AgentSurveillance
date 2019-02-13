@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Menu extends JFrame
 {
@@ -11,7 +13,6 @@ public class Menu extends JFrame
         this.setVisible(true);
         this.setResizable(false);
         this.setLayout(new BorderLayout());
-        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
@@ -34,11 +35,21 @@ public class Menu extends JFrame
         mapPanel.add(b2);
         mapPanel.add(b3);
 
+        b3.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                dispose();
+            }
+        });
+
         panel.add(label, BorderLayout.NORTH);
         panel.add(mapPanel, BorderLayout.CENTER);
 
         this.add(panel);
 
         this.pack();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
 }
