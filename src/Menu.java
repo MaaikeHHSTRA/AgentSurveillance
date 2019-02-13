@@ -1,11 +1,13 @@
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Menu extends JFrame
 {
+    private JButton buildMap;
+    private JButton selectMap;
+    private JButton exit;
+
     public Menu(String title)
     {
         super(title);
@@ -27,21 +29,27 @@ public class Menu extends JFrame
         mapPanel.setLayout(new GridLayout(3,0,20,0));
         mapPanel.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
 
-        JButton b1 = new JButton("Build Map");
-        JButton b2 = new JButton("Select Map");
-        JButton b3 = new JButton("Exit");
-
-        mapPanel.add(b1);
-        mapPanel.add(b2);
-        mapPanel.add(b3);
-
-        b3.addActionListener(new ActionListener()
+        buildMap = new JButton("Build Map");
+        buildMap.addActionListener(e ->
         {
-            public void actionPerformed(ActionEvent e)
-            {
-                dispose();
-            }
+            dispose();
+            Builder builder = new Builder(title);
         });
+
+        selectMap = new JButton("Select Map");
+        selectMap.addActionListener(e ->
+        {
+
+        });
+
+        exit = new JButton("Exit");
+        exit.addActionListener(e -> {
+            dispose();
+        });
+
+        mapPanel.add(buildMap);
+        mapPanel.add(selectMap);
+        mapPanel.add(exit);
 
         panel.add(label, BorderLayout.NORTH);
         panel.add(mapPanel, BorderLayout.CENTER);
