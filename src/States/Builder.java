@@ -1,17 +1,22 @@
+package States;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class Builder extends JFrame
 {
+    JButton zoomIn;
+    JButton zoomOut;
+
+    JButton continueB;
+    JButton back;
+
     JButton structure;
     JButton target;
     JButton cover;
     JButton sentryTower;
     JButton outerWall;
-
-    JButton zoomIn;
-    JButton zoomOut;
 
     public Builder(String title)
     {
@@ -22,6 +27,9 @@ public class Builder extends JFrame
         this.setLayout(new BorderLayout());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new BorderLayout());
+
         JPanel viewPanel = new JPanel();
         viewPanel.setBackground(Color.GREEN);
         viewPanel.setPreferredSize(new Dimension(1000,1000));
@@ -29,12 +37,31 @@ public class Builder extends JFrame
         JScrollPane scrollPane = new JScrollPane(viewPanel);
         scrollPane.setPreferredSize(new Dimension(800, 600));
 
+        JPanel zoomPanel = new JPanel();
+
+        zoomPanel.setLayout(new GridLayout(0,2,5,5));
+
+        zoomIn = new JButton("Zoom in");
+        zoomIn.addActionListener(e -> {
+            //zoom in
+        });
+
+        zoomOut = new JButton("Zoom out");
+        zoomOut.addActionListener(e -> {
+            //zoom out
+        });
+
+        zoomPanel.add(zoomIn);
+        zoomPanel.add(zoomOut);
+
+        centerPanel.add(scrollPane, BorderLayout.CENTER);
+        centerPanel.add(zoomPanel, BorderLayout.SOUTH);
+
         JPanel rightPanel = new JPanel();
         rightPanel.setBorder(new TitledBorder("Types"));
         rightPanel.setLayout(new BorderLayout(0,0));
 
         JPanel buttonPanel = new JPanel();
-
         buttonPanel.setLayout(new GridLayout(5,0,0,5));
 
         structure = new JButton("Structure");
@@ -68,27 +95,31 @@ public class Builder extends JFrame
         buttonPanel.add(sentryTower);
         buttonPanel.add(outerWall);
 
-        JPanel zoomPanel = new JPanel();
+        JPanel menuButtonPanel = new JPanel();
+        menuButtonPanel.setLayout(new GridLayout(0,1,0,5));
 
-        zoomPanel.setLayout(new GridLayout(2,0,0,5));
-
-        zoomIn = new JButton("Zoom in");
-        zoomIn.addActionListener(e -> {
-
+        continueB = new JButton("Continue");
+        continueB.addActionListener(e ->
+        {
+            dispose();
+            StateManager.setGameState(StateManager.GameState.WORLD);
+            StateManager.update();
         });
 
-        zoomOut = new JButton("Zoom out");
-        zoomOut.addActionListener(e -> {
-
+        back = new JButton("Back");
+        back.addActionListener(e -> {
+            dispose();
+            StateManager.setGameState(StateManager.GameState.MENU);
+            StateManager.update();
         });
 
-        zoomPanel.add(zoomIn);
-        zoomPanel.add(zoomOut);
+        menuButtonPanel.add(continueB);
+        menuButtonPanel.add(back);
 
         rightPanel.add(buttonPanel, BorderLayout.NORTH);
-        rightPanel.add(zoomPanel, BorderLayout.SOUTH);
+        rightPanel.add(menuButtonPanel, BorderLayout.SOUTH);
 
-        this.add(scrollPane, BorderLayout.CENTER);
+        this.add(centerPanel, BorderLayout.CENTER);
         this.add(rightPanel, BorderLayout.EAST);
 
         this.pack();

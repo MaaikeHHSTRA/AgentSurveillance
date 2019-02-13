@@ -1,3 +1,5 @@
+package States;
+
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
@@ -5,7 +7,7 @@ import java.awt.*;
 public class Menu extends JFrame
 {
     private JButton buildMap;
-    private JButton selectMap;
+    private JButton importMap;
     private JButton exit;
 
     public Menu(String title)
@@ -26,20 +28,20 @@ public class Menu extends JFrame
         label.setHorizontalAlignment(JLabel.CENTER);
 
         JPanel mapPanel =  new JPanel();
-        mapPanel.setLayout(new GridLayout(3,0,20,0));
-        mapPanel.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
+        mapPanel.setLayout(new GridLayout(0,1,20,0));
 
         buildMap = new JButton("Build Map");
         buildMap.addActionListener(e ->
         {
             dispose();
-            Builder builder = new Builder(title);
+            StateManager.setGameState(StateManager.GameState.BUILDER);
+            StateManager.update();
         });
 
-        selectMap = new JButton("Select Map");
-        selectMap.addActionListener(e ->
+        importMap = new JButton("Import Map");
+        importMap.addActionListener(e ->
         {
-
+            //call map importer
         });
 
         exit = new JButton("Exit");
@@ -48,7 +50,7 @@ public class Menu extends JFrame
         });
 
         mapPanel.add(buildMap);
-        mapPanel.add(selectMap);
+        mapPanel.add(importMap);
         mapPanel.add(exit);
 
         panel.add(label, BorderLayout.NORTH);
