@@ -1,20 +1,18 @@
-package States;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class World extends JFrame
 {
-    public World(String title)
+    public World()
     {
-        super(title);
+        super(Settings.getTitle());
 
         this.setVisible(true);
         this.setResizable(false);
         this.setLayout(new BorderLayout());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
+        this.setPreferredSize(new Dimension(200, 200));
 
         this.pack();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

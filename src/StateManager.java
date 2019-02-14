@@ -1,27 +1,21 @@
-package States;
-
-import States.Builder;
-import States.Menu;
-import States.World;
-
 public class StateManager
 {
     private static String title;
     private static GameState gameState;
     private static Menu menu;
     private static Builder builder;
+    private static BuilderSize builderSize;
     private static World world;
 
-    public StateManager(String title)
+    public StateManager()
     {
-        this.title = title;
         gameState = GameState.MENU;
         update();
     }
 
     public enum GameState
     {
-        MENU, BUILDER, WORLD
+        MENU, BUILDER, BUILDERSIZE, WORLD
     }
 
     public static void update()
@@ -29,13 +23,22 @@ public class StateManager
         switch (gameState)
         {
             case MENU:
-                menu = new Menu(title);
+                if (menu == null)
+                    menu = new Menu();
+                else
+                    menu.setVisible(true);
                 break;
             case BUILDER:
-                builder = new Builder(title);
+                builder = new Builder();
+                break;
+            case BUILDERSIZE:
+                if (builderSize == null)
+                    builderSize = new BuilderSize();
+                else
+                    builderSize.setVisible(true);
                 break;
             case WORLD:
-                world = new World(title);
+                world = new World();
                 break;
         }
     }

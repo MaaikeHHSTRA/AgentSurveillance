@@ -1,5 +1,3 @@
-package States;
-
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
@@ -10,9 +8,9 @@ public class Menu extends JFrame
     private JButton importMap;
     private JButton exit;
 
-    public Menu(String title)
+    public Menu()
     {
-        super(title);
+        super(Settings.getTitle());
 
         this.setVisible(true);
         this.setResizable(false);
@@ -33,8 +31,8 @@ public class Menu extends JFrame
         buildMap = new JButton("Build Map");
         buildMap.addActionListener(e ->
         {
-            dispose();
-            StateManager.setGameState(StateManager.GameState.BUILDER);
+            this.setVisible(false);
+            StateManager.setGameState(StateManager.GameState.BUILDERSIZE);
             StateManager.update();
         });
 
