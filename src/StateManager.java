@@ -51,5 +51,6 @@ public class StateManager
     public static void setGameState(GameState state)
     {
         gameState = state;
+        update();
     }
 }
