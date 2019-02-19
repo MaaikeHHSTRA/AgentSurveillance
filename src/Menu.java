@@ -1,14 +1,16 @@
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Menu extends JFrame
 {
-    public Menu(String title)
+    private JButton buildMap;
+    private JButton importMap;
+    private JButton exit;
+
+    public Menu()
     {
-        super(title);
+        super(Settings.getTitle());
 
         this.setVisible(true);
         this.setResizable(false);
@@ -24,24 +26,30 @@ public class Menu extends JFrame
         label.setHorizontalAlignment(JLabel.CENTER);
 
         JPanel mapPanel =  new JPanel();
-        mapPanel.setLayout(new GridLayout(3,0,20,0));
-        mapPanel.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
+        mapPanel.setLayout(new GridLayout(0,1,20,0));
 
-        JButton b1 = new JButton("Build Map");
-        JButton b2 = new JButton("Select Map");
-        JButton b3 = new JButton("Exit");
-
-        mapPanel.add(b1);
-        mapPanel.add(b2);
-        mapPanel.add(b3);
-
-        b3.addActionListener(new ActionListener()
+        buildMap = new JButton("Build Map");
+        buildMap.addActionListener(e ->
         {
-            public void actionPerformed(ActionEvent e)
-            {
-                dispose();
-            }
+            this.setVisible(false);
+            StateManager.setGameState(StateManager.GameState.BUILDERSIZE);
+            StateManager.update();
         });
+
+        importMap = new JButton("Import Map");
+        importMap.addActionListener(e ->
+        {
+            //call map importer
+        });
+
+        exit = new JButton("Exit");
+        exit.addActionListener(e -> {
+            dispose();
+        });
+
+        mapPanel.add(buildMap);
+        mapPanel.add(importMap);
+        mapPanel.add(exit);
 
         panel.add(label, BorderLayout.NORTH);
         panel.add(mapPanel, BorderLayout.CENTER);

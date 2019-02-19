@@ -1,7 +1,10 @@
 public class Launcher
 {
+    private static StateManager stateManager;
+
     public static void main(String args[])
     {
-        Menu menu = new Menu("Test");
+        Settings settings = new Settings("Agent Surveillance");
+        stateManager = new StateManager();
     }
 }
