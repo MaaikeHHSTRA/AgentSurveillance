@@ -70,9 +70,8 @@ public class BuilderSize extends JFrame
             {
                 Settings.setWorldWidth(width);
                 Settings.setWorldHeight(height);
-                this.setVisible(false);
+                this.dispose();
                 StateManager.setGameState(StateManager.GameState.BUILDER);
-                StateManager.update();
             }
         });
 

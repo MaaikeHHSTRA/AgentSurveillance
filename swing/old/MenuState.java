@@ -2,13 +2,13 @@ import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
 
-public class Menu extends JFrame
+public class MenuState extends State
 {
     private JButton buildMap;
     private JButton importMap;
     private JButton exit;
 
-    public Menu()
+    public MenuState()
     {
         super(Settings.getTitle());
 
@@ -39,7 +39,16 @@ public class Menu extends JFrame
         importMap = new JButton("Import Map");
         importMap.addActionListener(e ->
         {
-            //call map importer
+            JDialog test = new JDialog();
+            test.setTitle("test");
+
+            JButton testl = new JButton("wow");
+
+            test.add(testl);
+
+            test.setVisible(true);
+
+            test.pack();
         });
 
         exit = new JButton("Exit");

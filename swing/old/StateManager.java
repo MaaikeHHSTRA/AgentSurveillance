@@ -2,7 +2,7 @@ public class StateManager
 {
     private static String title;
     private static GameState gameState;
-    private static Menu menu;
+    private static MenuState menuState;
     private static Builder builder;
     private static BuilderSize builderSize;
     private static World world;
@@ -23,19 +23,16 @@ public class StateManager
         switch (gameState)
         {
             case MENU:
-                if (menu == null)
-                    menu = new Menu();
+                if (menuState == null)
+                    menuState = new MenuState();
                 else
-                    menu.setVisible(true);
+                    menuState.setVisible(true);
                 break;
             case BUILDER:
                 builder = new Builder();
                 break;
             case BUILDERSIZE:
-                if (builderSize == null)
-                    builderSize = new BuilderSize();
-                else
-                    builderSize.setVisible(true);
+                builderSize = new BuilderSize();
                 break;
             case WORLD:
                 world = new World();
