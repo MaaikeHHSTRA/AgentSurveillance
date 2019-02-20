@@ -1,11 +1,11 @@
 public class Area
 {
-    private double[] topLeft, bottomRight;
+    protected static double[] topLeft, bottomRight;
 
     public Area(double[] topLeft, double[] bottomRight)
     {
-        this.topLeft = topLeft;
-        this.bottomRight = bottomRight;
+        Area.topLeft = topLeft;
+        Area.bottomRight = bottomRight;
     }
 
     public Area(double left, double top, double right, double bottom)
