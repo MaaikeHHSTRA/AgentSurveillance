@@ -9,7 +9,10 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import java.io.File;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.*;
 
 public class BuilderState extends State
 {
@@ -17,6 +20,12 @@ public class BuilderState extends State
     BorderPane layout;
     private int windowSize = 700;
     Button structure,doorS,windowS,sentTower,tree,target;
+    Color[] rectangleColors = {Color.YELLOWGREEN,Color.TURQUOISE,Color.VIOLET,Color.TOMATO} ;
+    double startX,startY;
+    boolean drawNewRect = false;
+    Rectangle rect = null;
+    Group groupOfRects = new Group();
+    int colorArea;
 
     public BuilderState(StateManager stateManager, Stage window)
     {
@@ -42,14 +51,32 @@ public class BuilderState extends State
         //Area buttons
         VBox areas = new VBox();
         structure = new Button("Structure");
+        structure.setOnAction(e -> {
+            event("Structure");
+        });
         doorS = new Button("Door");
+        doorS.setOnAction(e -> {
+
+        });
         windowS = new Button("Window");
+        windowS.setOnAction(e -> {
+
+        });
         sentTower = new Button("Sentry Tower");
+        sentTower.setOnAction(e -> {
+
+        });
         tree = new Button("Shade/trees");
+        tree.setOnAction(e -> {
+
+        });
         target = new Button("Target Area");
+        target.setOnAction(e -> {
+
+        });
         areas.getChildren().addAll(new Label("Areas"),structure,doorS,windowS,sentTower,tree,target);
 
-        //Map clearifications/adjustments
+        //Map clarifications/adjustments
 
         //Map
         //Image BGImage = new Image("http://icon-park.com/imagefiles/noize_background_lightgreen.png");
@@ -72,5 +99,71 @@ public class BuilderState extends State
 
     public Scene getScene() {
         return scene;
+    }
+
+    private void drawRect(int x, int y){
+        Rectangle rect = new Rectangle(x,y);
+    }
+
+    /*public void mousePressed(MouseEvent evt) {
+            int x = evt.getX();
+            int y = evt.getY();
+            drawRect(x,y);
+    }*/
+
+    public void event(String area){
+        scene.setOnMousePressed((MouseEvent event) -> {
+            if ( drawNewRect == false ) {
+                startX = event.getSceneX() ;
+                startY = event.getSceneY() ;
+                rect = new Rectangle() ;
+                rect.setFill(Color.SNOW);
+                rect.setStroke(Color.BLACK);
+                groupOfRects.getChildren().add(rect) ;
+                drawNewRect = true ;
+            }
+        } ) ;
+
+        scene.setOnMouseDragged((MouseEvent event) -> {
+            if (drawNewRect == true){
+                double endX = event.getSceneX();
+                double endY = event.getSceneY();
+                adjustRect(startX, startY,endX,endY,rect);
+            }
+        } ) ;
+
+        scene.setOnMouseReleased((MouseEvent event) -> {
+            if (drawNewRect == true){
+                if(area == "Structure")
+                    colorArea = 0;
+                if(area == "Sentry Tower")
+                    colorArea = 1;
+                if(area == "Shade/trees")
+                    colorArea = 2;
+                if(area == "Target Area")
+                    colorArea = 3;
+
+                rect.setFill(rectangleColors[colorArea]);
+
+                rect = null ;
+                drawNewRect = false ;
+            }
+        } ) ;
+    }
+
+    void adjustRect( double startX, double startY, double endX, double endY, Rectangle rect) {
+        rect.setX(startX) ;
+        rect.setY(startY) ;
+        rect.setWidth(endX - startX) ;
+        rect.setHeight(endY - startY) ;
+
+        if (rect.getWidth() < 0){
+            rect.setWidth( - rect.getWidth());
+            rect.setX( rect.getX() - rect.getWidth());
+        }
+        if (rect.getHeight() < 0){
+            rect.setHeight( - rect.getHeight());
+            rect.setY( rect.getY() - rect.getHeight());
+        }
     }
 }
