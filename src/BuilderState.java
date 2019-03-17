@@ -27,8 +27,7 @@ public class BuilderState extends State
     Group groupOfRects = new Group();
     int colorArea;
 
-    public BuilderState(StateManager stateManager, Stage window)
-    {
+    public BuilderState(StateManager stateManager, Stage window){
         super(stateManager,window);
         window.setTitle("Agent Surveillance - World builder");
 
@@ -64,15 +63,15 @@ public class BuilderState extends State
         });
         sentTower = new Button("Sentry Tower");
         sentTower.setOnAction(e -> {
-
+            event("Sentry Tower");
         });
         tree = new Button("Shade/trees");
         tree.setOnAction(e -> {
-
+            event("Shade/trees");
         });
         target = new Button("Target Area");
         target.setOnAction(e -> {
-
+            event("Target Area");
         });
         areas.getChildren().addAll(new Label("Areas"),structure,doorS,windowS,sentTower,tree,target);
 
@@ -122,7 +121,7 @@ public class BuilderState extends State
                 groupOfRects.getChildren().add(rect) ;
                 drawNewRect = true ;
             }
-        } ) ;
+        });
 
         scene.setOnMouseDragged((MouseEvent event) -> {
             if (drawNewRect == true){
@@ -130,7 +129,7 @@ public class BuilderState extends State
                 double endY = event.getSceneY();
                 adjustRect(startX, startY,endX,endY,rect);
             }
-        } ) ;
+        });
 
         scene.setOnMouseReleased((MouseEvent event) -> {
             if (drawNewRect == true){
@@ -148,7 +147,7 @@ public class BuilderState extends State
                 rect = null ;
                 drawNewRect = false ;
             }
-        } ) ;
+        });
     }
 
     void adjustRect( double startX, double startY, double endX, double endY, Rectangle rect) {
