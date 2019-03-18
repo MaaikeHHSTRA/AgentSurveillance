@@ -2,37 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f94b512-3d26-4ba0-b584-7137039b2e43" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Shade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Target.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Simulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Area.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Builder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BuilderPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BuilderSize.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entrance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Entrance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Area.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/Builder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/BuilderPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/BuilderPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/BuilderSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/BuilderSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Entrance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Launcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Map.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/Structure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Structure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rest/World.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StateManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Structure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Agents/Agents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agents/Agents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Backend/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Backend/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrontEnd/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontEnd/StateManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,10 +18,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Entrance.java">
+        <entry file="file://$PROJECT_DIR$/src/FrontEnd/StateManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            <state relative-caret-position="323">
+              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Simulator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,70 +41,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Structure.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
-                <element signature="e#182#192#0" expanded="true" />
-                <element signature="e#2222#2223#0" expanded="true" />
-                <element signature="e#2249#2250#0" expanded="true" />
-                <element signature="e#2367#2368#0" expanded="true" />
-                <element signature="e#2395#2396#0" expanded="true" />
-                <element signature="e#2446#2447#0" expanded="true" />
-                <element signature="e#2476#2477#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/Target.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="e#126#127#0" expanded="true" />
-                <element signature="e#169#170#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
+                <element signature="e#205#206#0" expanded="true" />
+                <element signature="e#253#254#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Area.java">
+        <entry file="file://$PROJECT_DIR$/src/Agents/Agents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#714#715#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Shade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding>
-                <element signature="e#115#116#0" expanded="true" />
-                <element signature="e#136#137#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -143,7 +82,6 @@
         <option value="$PROJECT_DIR$/src/sample/Building.java" />
         <option value="$PROJECT_DIR$/src/sample/SentryTower.java" />
         <option value="$PROJECT_DIR$/src/sample/Structure.java" />
-        <option value="$PROJECT_DIR$/src/Agents/Agents.java" />
         <option value="$PROJECT_DIR$/src/Backend/Movement.java" />
         <option value="$PROJECT_DIR$/src/Math/MathLib.java" />
         <option value="$PROJECT_DIR$/src/Math/Vector2.java" />
@@ -158,12 +96,16 @@
         <option value="$PROJECT_DIR$/src/View/Area.java" />
         <option value="$PROJECT_DIR$/src/FrontEnd/BuilderPanel.java" />
         <option value="$PROJECT_DIR$/src/View/Target.java" />
+        <option value="$PROJECT_DIR$/src/FrontEnd/StateManager.java" />
+        <option value="$PROJECT_DIR$/src/Agents/Agents.java" />
+        <option value="$PROJECT_DIR$/src/Backend/Agent.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Simulator.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="width" value="965" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1249" />
+    <option name="width" value="681" />
     <option name="height" value="1031" />
   </component>
   <component name="ProjectView">
@@ -189,6 +131,18 @@
               <item name="AgentSurveillance" type="b2602c69:ProjectViewProjectNode" />
               <item name="AgentSurveillance" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Agents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AgentSurveillance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AgentSurveillance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AgentSurveillance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AgentSurveillance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -204,7 +158,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552949022783" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552953034926" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -256,10 +210,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="643" height="687" extended-state="0" />
+    <frame x="833" y="0" width="454" height="687" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31560892" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07614213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -417,13 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Backend/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Backend/Intruder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -478,13 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontEnd/StateManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FrontEnd/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -506,27 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agents/Agents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Entrance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Shade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -535,13 +454,6 @@
             <element signature="e#115#116#0" expanded="true" />
             <element signature="e#136#137#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -601,6 +513,64 @@
           <folding>
             <element signature="e#126#127#0" expanded="true" />
             <element signature="e#169#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Entrance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontEnd/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontEnd/StateManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Backend/Agent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#205#206#0" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agents/Agents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Simulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

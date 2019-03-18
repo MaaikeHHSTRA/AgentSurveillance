@@ -1,5 +1,7 @@
 package FrontEnd;
 
+import static FrontEnd.StateManager.GameState.*;
+
 public class StateManager
 {
     private static String title;
@@ -11,7 +13,7 @@ public class StateManager
 
     public StateManager()
     {
-        gameState = GameState.MENU;
+        gameState = MENU;
         update();
     }
 
@@ -24,22 +26,22 @@ public class StateManager
     {
         switch (gameState)
         {
-            case GameState.MENU:
+            case MENU:
                 if (menu == null)
                     menu = new Menu();
                 else
                     menu.setVisible(true);
                 break;
-            case GameState.BUILDER:
+            case BUILDER:
                 builder = new Builder();
                 break;
-            case GameState.BUILDERSIZE:
+            case BUILDERSIZE:
                 if (builderSize == null)
                     builderSize = new BuilderSize();
                 else
                     builderSize.setVisible(true);
                 break;
-            case GameState.WORLD:
+            case WORLD:
                 world = new World();
                 break;
         }
