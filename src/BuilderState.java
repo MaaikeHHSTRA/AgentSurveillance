@@ -129,6 +129,7 @@ public class BuilderState extends State
                 double endY = event.getSceneY();
                 adjustRect(startX, startY,endX,endY,rect);
             }
+
         });
 
         scene.setOnMouseReleased((MouseEvent event) -> {
