@@ -14,21 +14,20 @@ import javafx.scene.paint.Color;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.*;
 
-public class BuilderState extends State
-{
+public class BuilderState extends State {
     Scene scene;
     BorderPane layout;
     private int windowSize = 700;
-    Button structure,doorS,windowS,sentTower,tree,target;
-    Color[] rectangleColors = {Color.YELLOWGREEN,Color.TURQUOISE,Color.VIOLET,Color.TOMATO} ;
-    double startX,startY;
+    Button structure, doorS, windowS, sentTower, tree, target;
+    Color[] rectangleColors = {Color.YELLOWGREEN, Color.TURQUOISE, Color.VIOLET, Color.TOMATO};
+    double startX, startY;
     boolean drawNewRect = false;
     Rectangle rect = null;
     Group groupOfRects = new Group();
     int colorArea;
 
-    public BuilderState(StateManager stateManager, Stage window){
-        super(stateManager,window);
+    public BuilderState(StateManager stateManager, Stage window) {
+        super(stateManager, window);
         window.setTitle("Agent Surveillance - World builder");
 
         //Menu: file
@@ -49,9 +48,9 @@ public class BuilderState extends State
 
         //Area buttons
         VBox areas = new VBox();
-        structure = new Button("Structure");
+        structure = new Button("BuildingStructure");
         structure.setOnAction(e -> {
-            event("Structure");
+            event("BuildingStructure");
         });
         doorS = new Button("Door");
         doorS.setOnAction(e -> {
@@ -61,25 +60,25 @@ public class BuilderState extends State
         windowS.setOnAction(e -> {
 
         });
-        sentTower = new Button("Sentry Tower");
+        sentTower = new Button("SentryTower");
         sentTower.setOnAction(e -> {
-            event("Sentry Tower");
+            event("SentryTower");
         });
-        tree = new Button("Shade/trees");
+        tree = new Button("Vegetation");
         tree.setOnAction(e -> {
-            event("Shade/trees");
+            event("Vegetation");
         });
-        target = new Button("Target Area");
+        target = new Button("TargetArea");
         target.setOnAction(e -> {
-            event("Target Area");
+            event("TargetArea");
         });
-        areas.getChildren().addAll(new Label("Areas"),structure,doorS,windowS,sentTower,tree,target);
+        areas.getChildren().addAll(new Label("Areas"), structure, doorS, windowS, sentTower, tree, target);
 
         //Map clarifications/adjustments
 
         //Map
         //Image BGImage = new Image("http://icon-park.com/imagefiles/noize_background_lightgreen.png");
-        Image BGImage = new Image("file:src/Assets/grassBG.png");
+        Image BGImage = new Image("file:src/files/grassBG.png");
         ImageView background = new ImageView();
         background.setImage(BGImage);
 
@@ -100,8 +99,8 @@ public class BuilderState extends State
         return scene;
     }
 
-    private void drawRect(int x, int y){
-        Rectangle rect = new Rectangle(x,y);
+    private void drawRect(int x, int y) {
+        Rectangle rect = new Rectangle(x, y);
     }
 
     /*public void mousePressed(MouseEvent evt) {
@@ -110,60 +109,60 @@ public class BuilderState extends State
             drawRect(x,y);
     }*/
 
-    public void event(String area){
+    public void event(String area) {
         scene.setOnMousePressed((MouseEvent event) -> {
-            if ( drawNewRect == false ) {
-                startX = event.getSceneX() ;
-                startY = event.getSceneY() ;
-                rect = new Rectangle() ;
+            if (drawNewRect == false) {
+                startX = event.getSceneX();
+                startY = event.getSceneY();
+                rect = new Rectangle();
                 rect.setFill(Color.SNOW);
                 rect.setStroke(Color.BLACK);
-                groupOfRects.getChildren().add(rect) ;
-                drawNewRect = true ;
+                groupOfRects.getChildren().add(rect);
+                drawNewRect = true;
             }
         });
 
         scene.setOnMouseDragged((MouseEvent event) -> {
-            if (drawNewRect == true){
+            if (drawNewRect == true) {
                 double endX = event.getSceneX();
                 double endY = event.getSceneY();
-                adjustRect(startX, startY,endX,endY,rect);
+                adjustRect(startX, startY, endX, endY, rect);
             }
 
         });
 
         scene.setOnMouseReleased((MouseEvent event) -> {
-            if (drawNewRect == true){
-                if(area == "Structure")
+            if (drawNewRect == true) {
+                if (area == "BuildingStructure")
                     colorArea = 0;
-                if(area == "Sentry Tower")
+                if (area == "Sentry Tower")
                     colorArea = 1;
-                if(area == "Shade/trees")
+                if (area == "Shade/trees")
                     colorArea = 2;
-                if(area == "Target Area")
+                if (area == "Target Area")
                     colorArea = 3;
 
                 rect.setFill(rectangleColors[colorArea]);
 
-                rect = null ;
-                drawNewRect = false ;
+                rect = null;
+                drawNewRect = false;
             }
         });
     }
 
-    void adjustRect( double startX, double startY, double endX, double endY, Rectangle rect) {
-        rect.setX(startX) ;
-        rect.setY(startY) ;
-        rect.setWidth(endX - startX) ;
-        rect.setHeight(endY - startY) ;
+    void adjustRect(double startX, double startY, double endX, double endY, Rectangle rect) {
+        rect.setX(startX);
+        rect.setY(startY);
+        rect.setWidth(endX - startX);
+        rect.setHeight(endY - startY);
 
-        if (rect.getWidth() < 0){
-            rect.setWidth( - rect.getWidth());
-            rect.setX( rect.getX() - rect.getWidth());
+        if (rect.getWidth() < 0) {
+            rect.setWidth(-rect.getWidth());
+            rect.setX(rect.getX() - rect.getWidth());
         }
-        if (rect.getHeight() < 0){
-            rect.setHeight( - rect.getHeight());
-            rect.setY( rect.getY() - rect.getHeight());
+        if (rect.getHeight() < 0) {
+            rect.setHeight(-rect.getHeight());
+            rect.setY(rect.getY() - rect.getHeight());
         }
     }
 }

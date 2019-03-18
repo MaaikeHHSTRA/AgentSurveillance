@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AgentSurveillance.iml" filepath="$PROJECT_DIR$/AgentSurveillance.iml" />
-      <module fileurl="file://$PROJECT_DIR$/swing/swing.iml" filepath="$PROJECT_DIR$/swing/swing.iml" />
     </modules>
   </component>
 </project>
