@@ -1,1 +1,14 @@
-/bin/
+out/production/AgentSurveillance/World.class
+out/production/AgentSurveillance/StateManager.class
+out/production/AgentSurveillance/Settings.class
+out/production/AgentSurveillance/Map.class
+out/production/AgentSurveillance/Entrance.class
+out/production/AgentSurveillance/Builder.class
+out/production/AgentSurveillance/Area.class
+out/production/AgentSurveillance/Structure.class
+out/production/AgentSurveillance/StateManager$GameState.class
+out/production/AgentSurveillance/Menu.class
+out/production/AgentSurveillance/Launcher.class
+out/production/AgentSurveillance/BuilderPanel.class
+.idea/compiler.xml
+out/production/AgentSurveillance/BuilderSize.class

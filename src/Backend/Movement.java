@@ -24,5 +24,8 @@ public void Run (){
 
 
 }
+public String getState() {
+    if ()
+}
 
 }
