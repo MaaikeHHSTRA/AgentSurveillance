@@ -1,3 +1,5 @@
+package FrontEnd;
+
 public class StateManager
 {
     private static String title;
@@ -22,22 +24,22 @@ public class StateManager
     {
         switch (gameState)
         {
-            case MENU:
+            case GameState.MENU:
                 if (menu == null)
                     menu = new Menu();
                 else
                     menu.setVisible(true);
                 break;
-            case BUILDER:
+            case GameState.BUILDER:
                 builder = new Builder();
                 break;
-            case BUILDERSIZE:
+            case GameState.BUILDERSIZE:
                 if (builderSize == null)
                     builderSize = new BuilderSize();
                 else
                     builderSize.setVisible(true);
                 break;
-            case WORLD:
+            case GameState.WORLD:
                 world = new World();
                 break;
         }

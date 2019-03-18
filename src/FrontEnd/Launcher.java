@@ -1,3 +1,5 @@
+package FrontEnd;
+
 public class Launcher
 {
     private static StateManager stateManager;

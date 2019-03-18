@@ -1,3 +1,7 @@
+package FrontEnd;
+
+import FrontEnd.Settings;
+
 import javax.swing.*;
 import java.awt.*;
 

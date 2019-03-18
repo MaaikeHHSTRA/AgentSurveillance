@@ -1,3 +1,5 @@
+package FrontEnd;
+
 public class Settings
 {
     private static String title;

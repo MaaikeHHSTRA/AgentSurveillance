@@ -1,3 +1,8 @@
+package FrontEnd;
+
+import View.Map;
+import View.Area;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -99,7 +104,7 @@ public class BuilderPanel extends JPanel
 
     public void drawMap(Graphics2D g2, Map map)
     {
-        ArrayList<Area> areaList = map.getAreaList();
+        ArrayList<View.Area> areaList = map.getAreaList();
 
         for (int i = 0; i < areaList.size(); i++)
         {

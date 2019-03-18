@@ -1,3 +1,7 @@
+package FrontEnd;
+
+import View.Map;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
