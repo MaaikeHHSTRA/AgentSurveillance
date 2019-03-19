@@ -1,15 +1,19 @@
 package Backend;
-
 import Math.Vector2;
+
 
 //Here will be computed the movement, turning, visual, hearing
 public class Body {
 
     //make part of agent
-    private float angleFacing;
-    private float velocity;
-    private float visualRange;
-    private Vector2 position;
+    protected float angleFacing; //according to the world
+    protected float velocity;
+    protected float[] visualRange;
+    protected float visualAngle;
+    protected float audioCapability;
+    protected float visibility = 10.0f; //at which distance can other agents see him
+
+    protected Vector2 position;
 
     private float restTime;
     private float runTime;
@@ -36,7 +40,6 @@ public class Body {
            canRun = false;
         }
     }
-
 
     //called in every frame
     public void checkRun() {
@@ -65,7 +68,81 @@ public class Body {
             return 1;
     }
 
+
+
+    //Soooo many getters and setters
     
+    public float getAngleFacing() {
+        return angleFacing;
+    }
 
+    public void setAngleFacing(float angleFacing) {
+        this.angleFacing = angleFacing;
+    }
 
+    public float getVelocity() {
+        return velocity;
+    }
+
+    public void setVelocity(float velocity) {
+        this.velocity = velocity;
+    }
+
+    public float[] getVisualRange() {
+        return visualRange;
+    }
+
+    public void setVisualRange(float visualRangeBeg, float visualRangeEnd) {
+
+        float[] visualRange = {visualRangeBeg, visualRangeEnd};
+        this.visualRange = visualRange;
+    }
+
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    public void setPosition(Vector2 position) {
+        this.position = position;
+    }
+
+    public float getRestTime() {
+        return restTime;
+    }
+
+    public void setRestTime(float restTime) {
+        this.restTime = restTime;
+    }
+
+    public float getRunTime() {
+        return runTime;
+    }
+
+    public void setRunTime(float runTime) {
+        this.runTime = runTime;
+    }
+
+    public boolean getCanRun() {
+        return canRun;
+    }
+
+    public void setCanRun(boolean canRun) {
+        this.canRun = canRun;
+    }
+
+    public float getVisualAngle() {
+        return visualAngle;
+    }
+
+    public void setVisualAngle(float visualAngle) {
+        this.visualAngle = visualAngle;
+    }
+
+    public float getAudioCapability() { return audioCapability; }
+
+    public void setAudioCapability(float audioCapability){ this.audioCapability = audioCapability; }
+
+    public void setVisibility(float visibility) { this.visibility = visibility; }
+
+    public float getVisibility() { return visibility; }
 }

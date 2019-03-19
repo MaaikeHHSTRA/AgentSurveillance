@@ -1,4 +1,9 @@
 package View;
+import Backend.Agent;
+import Backend.Intruder;
+import Backend.Surveillance;
+
+import java.util.Random;
 
 public class Entrance{
 
@@ -30,7 +35,8 @@ public class Entrance{
 		if(type == "door")
 		{
 			enteringSoundDistance = 0.0;
-			enteringTime = 12.0; //TO ADD THE STD DEV FUNCTION FROM MATH FILE (NORMAL DSTRB WITH STD 2)
+			Random random = new Random();
+			enteringTime = random.nextGaussian()*2 + 12.0; //Normal distribution with std 2 and mean = 12
 		}
 	}
 
@@ -47,4 +53,10 @@ public class Entrance{
 		return endPos;
 	}
 
+
+	//to check if can enter the Sentry tower
+	public boolean canEnterSentryTower(Agent agent) {
+		if (agent instanceof Surveillance) return true;
+		return false;
+	}
 }

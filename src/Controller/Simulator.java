@@ -22,11 +22,14 @@ public class Simulator {
 
         final double GAME_HERTZ = 60.0;
         final double time_before_update = 1_000_000_000 / GAME_HERTZ;
-        double must_update_before_render = 5;
+        double must_update_before_render = 5; //code execution
+
         double last_update_time = System.nanoTime();
         double last_render_time;
+
         final double target_fps = 60;
         final double total_time_before_render = 1_000_000_000 / target_fps;
+
         int frame_count = 0;
         int lastSecondTime = (int) (last_update_time/1_000_000_000);
         int old_frame_count = 0;
@@ -34,6 +37,7 @@ public class Simulator {
 
         while(running){
 
+            //Updates everything
             double now = System.nanoTime();
             int update_count = 0;
             while((now - last_update_time) > 0 && (update_count < must_update_before_render)){
@@ -44,6 +48,7 @@ public class Simulator {
 
             render();
             draw();
+
             last_render_time = now;
             frame_count ++;
 
@@ -59,21 +64,20 @@ public class Simulator {
 
                 now = System.nanoTime();
             }
-
         }
-
-
-
     }
 
+    //Function that updates all the agents positions, communications, interactions
     public void update(){
 
     }
 
+    //Function that updates the visuals aka agents positions & communications
     public void render(){
 
     }
 
+    //Function that redraws every frame
     public void draw(){
 
     }
