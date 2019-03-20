@@ -27,4 +27,20 @@ abstract public class Agent
         body.setVisualAngle(body.getVisualAngle()*2);
     }
 
+
+    public Body getBody() {
+        return body;
+    }
+
+    public void setBody(Body body) {
+        this.body = body;
+    }
+
+    public Brain getBrain() {
+        return brain;
+    }
+
+    public void setBrain(Brain brain) {
+        this.brain = brain;
+    }
 }

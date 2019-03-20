@@ -13,7 +13,7 @@ public class Body {
     protected float audioCapability;
     protected float visibility = 10.0f; //at which distance can other agents see him
 
-    protected Vector2 position;
+    protected double[] position;
 
     private float restTime;
     private float runTime;
@@ -71,7 +71,7 @@ public class Body {
 
 
     //Soooo many getters and setters
-    
+
     public float getAngleFacing() {
         return angleFacing;
     }
@@ -98,11 +98,11 @@ public class Body {
         this.visualRange = visualRange;
     }
 
-    public Vector2 getPosition() {
+    public double[] getPosition() {
         return position;
     }
 
-    public void setPosition(Vector2 position) {
+    public void setPosition(double[] position) {
         this.position = position;
     }
 
