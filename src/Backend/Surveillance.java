@@ -7,7 +7,7 @@ import java.util.TimerTask;
 
 public class Surveillance extends Agent {
 
-    public Surveillance(Vector2 initPos, float initAngle) {
+    public Surveillance(double[] initPos, float initAngle) {
         super(initPos, initAngle);
         body.setCanRun(false);
         body.setVisualRange(0.0f,6.0f);

@@ -37,8 +37,8 @@ public class Area
 
     public boolean inArea(double[] pos)
     {
-        if((pos[0] < topLeft[0]) || (pos[0] > bottomRight[0]) ||
-                (pos[1] < topLeft[1]) || (pos[1] > bottomRight[1])) return false;
+        if((pos[0] < topLeft[0]) || (pos[0] > bottomRight[0]) &&
+                (pos[1] > topLeft[1]) || (pos[1] < bottomRight[1])) return false;
         else return true;
     }
 

@@ -6,7 +6,7 @@ abstract public class Agent
     protected Body body;
     private Brain brain;
 
-    public Agent(Vector2 initPos, float initAngle) {
+    public Agent(double[] initPos, float initAngle) {
         this.body = new Body();
         this.brain = new Brain();
 

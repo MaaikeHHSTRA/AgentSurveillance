@@ -1,15 +1,34 @@
 package test;
 
+import Backend.Agent;
+import Backend.Intruder;
+import Backend.Surveillance;
+import Controller.PhysicsEngine;
+import Controller.Simulator;
+import View.Structure;
+
+import java.util.ArrayList;
+
 public class Test {
 
     public static void main(String args[])
     {
-        double v = 6.0;
-        double a = 10.0;
-        double[] p = {25.0, 34.0};
-        double deltaX = v*Math.cos(Math.toRadians(a));
-        double deltaY = v*Math.sin(Math.toRadians(a));
-        double[] newPos = {p[0] + deltaX, p[1] + deltaY};
-        System.out.print(newPos[0] + " " + newPos[1]);
+        Surveillance a = new Surveillance(new double[]{2.0, 2.0}, 0);
+        Surveillance b = new Surveillance(new double[]{2.0, 2.0}, 180);
+        Intruder c = new Intruder(new double[]{3.0, 4.0}, 200);
+        Structure house = new Structure("normal", new  double[]{3.0, 3.0}, new double[]{4.0, 0.0});
+
+        ArrayList<Agent> agents = new ArrayList<Agent>();
+        ArrayList<Structure> structures = new ArrayList<Structure>();
+
+        agents.add(a);
+        agents.add(b);
+  //      agents.add(c);
+        structures.add(house);
+
+        PhysicsEngine p = new PhysicsEngine(agents, structures);
+
+        p.update();
+
     }
 }

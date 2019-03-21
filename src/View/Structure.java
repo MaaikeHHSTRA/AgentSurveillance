@@ -8,6 +8,12 @@ public class Structure extends Area {
 	private ArrayList<Entrance> doors = new ArrayList<Entrance>();
 	private ArrayList<Entrance> windows = new ArrayList<Entrance>();
 
+	protected double[] topLeftCorner = topLeft;
+	protected double[] bottomLeftCorner = {topLeft[0], bottomRight[1]};
+	protected double[] topRightCorner = {bottomRight[0], topLeft[1]};
+	protected double[] bottomRightCorner = bottomRight;
+
+
 	public Structure(String t, double[] topLeft, double[] bottomRight) {
 		super(topLeft, bottomRight);
 		type = t;
@@ -62,6 +68,17 @@ public class Structure extends Area {
 
 		Shade[] shades = {s1,s2};
 		return shades;
+	}
+
+	public double[][][] getWalls()
+	{
+		//Walls built with (x,y) of th efirst point followed with(x,y) of the second
+		double[][] leftWall = {topLeftCorner, bottomLeftCorner};
+		double[][] rightWall = {topRightCorner, bottomRightCorner};
+		double[][] topWall = {topLeftCorner, topRightCorner};
+		double[][] bottomWall = {bottomLeftCorner, bottomRightCorner};
+		double[][][] walls = {leftWall, rightWall, topWall, bottomWall};
+		return walls;
 	}
 
 	public String getType()
