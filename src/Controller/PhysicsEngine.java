@@ -29,7 +29,7 @@ public class PhysicsEngine {
             ArrayList<Agent> agentsInVision = new ArrayList<Agent>();
 
             //Look for every structure to see if there's any collision with its walls during the next step
-            
+
             double[] oldPos = b.getPosition();
             double[] newPos = newPos(b.getVelocity(), b.getPosition(), b.getAngleFacing());
 
