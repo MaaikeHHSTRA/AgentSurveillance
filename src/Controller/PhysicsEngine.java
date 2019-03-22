@@ -29,7 +29,6 @@ public class PhysicsEngine {
             ArrayList<Agent> agentsInVision = new ArrayList<Agent>();
 
             //Look for every structure to see if there's any collision with its walls during the next step
-
             double[] oldPos = b.getPosition();
             double[] newPos = newPos(b.getVelocity(), b.getPosition(), b.getAngleFacing());
 
@@ -47,9 +46,19 @@ public class PhysicsEngine {
                     }
                 }
             }
-
             //If the agent doesnt bump into a wall, update his position
             if(!bumpIntoWall) a.getBody().setPosition(newPos);
+
+
+            //Check if other agents are in visual range
+            for(Agent other: agents){
+                if(a != other){
+                    a.getBody().getVisualArea().getVisualArea();
+                }
+            }
+
+
+
         }
     }
 

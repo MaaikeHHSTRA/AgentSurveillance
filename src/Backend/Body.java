@@ -5,15 +5,21 @@ import Math.Vector2;
 //Here will be computed the movement, turning, visual, hearing
 public class Body {
 
+
+    //Would be nice to reorganize this
+    //Feels like some classes such as visual, movement, hearing are not necessary
+
     //make part of agent
     protected float angleFacing; //according to the world
     protected float velocity;
-    protected float[] visualRange;
-    protected float visualAngle;
     protected float audioCapability;
     protected float visibility = 10.0f; //at which distance can other agents see him
-
     protected double[] position;
+
+    //Visual requirements
+    protected float[] visualRange;
+    protected float visualAngle;
+    protected Visual visualArea = new Visual(position, angleFacing, visualAngle, visualRange);
 
     private float restTime;
     private float runTime;
@@ -145,4 +151,13 @@ public class Body {
     public void setVisibility(float visibility) { this.visibility = visibility; }
 
     public float getVisibility() { return visibility; }
+
+    public Visual getVisualArea() {
+        return visualArea;
+    }
+
+    public void setVisualArea(Visual visualArea) {
+        this.visualArea = visualArea;
+    }
+
 }
